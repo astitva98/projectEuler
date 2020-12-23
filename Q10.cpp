@@ -16,25 +16,18 @@ typedef pair<int, int> pi;
 #define POB pop_back 
 #define MP make_pair 
 
-bool isNotPrime(ll t){
-	if(t%100==0)	cout<<'\t'<<t<<endl;
-	// ll limit = sqrt(t);
-	FORL(j ,2 , t/2){
-		if(t%j==0)	return true;
+bool isPrime(ll a){
+	FORL(s , 2 , sqrt(a)+1){
+		if(a%s==0)	return false;
 	}
-	return false;
+	return true;
 }
 
 int main() {
-	int i = 1;
-	ll t = 2ll;
-	FOR(j , 10001){
-		// if(t%100==0)	cout<<'\t'<<t<<endl;
-		while(isNotPrime(t)){
-			t++;
-		}
-		t++;
+	ll si = 6;
+	FORL(a ,4, 2000000){
+		if(isPrime(a))	si+=a;
 	}
-	cout<<t-1;
+	cout<<si;
 	return 0;
 }
