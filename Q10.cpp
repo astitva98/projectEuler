@@ -24,9 +24,10 @@ bool isPrime(ll a){
 }
 
 int main() {
-	ll si = 6;
-	FORL(a ,4, 2000000){
+	ll si = 5;
+	FORL(a ,5, 2000000){
 		if(isPrime(a))	si+=a;
+		a++;
 	}
 	cout<<si;
 	return 0;
